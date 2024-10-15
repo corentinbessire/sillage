@@ -2,15 +2,14 @@ tailwind_starterkit theme, generated from starterkit_theme. Additional informati
 
 ## Set up
 
-### Mac Os
+Prerequisite : `rename` (`brew install rename` // `sudo apt-get install rename`)
 
-Prerequisite : `rename` (`brew install rename`)
 
 Replace `themeName` by the name of the theme you want to setup.
 
 ```bash
-sh setup_osx.sh [themeName]
+sh setup.sh [themeName]
 ```
 
-
-### Linux (@ToDo)
+### Note 
+This script neeed to be tested on Linux

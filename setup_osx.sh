@@ -16,7 +16,6 @@ fi
 
 themeName=$1
 
-cd tailwind_starterkit
 find . -name "*tailwind_starterkit.*" -exec rename -s 'tailwind_starterkit' ${themeName}  -v {} ";"
 find . \( ! -regex '.*/\..*' \) -type f | LC_ALL=C xargs sed -i '' 's/tailwind_starterkit/${themeName}/g'
 rm -rf .git

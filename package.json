@@ -1,7 +1,7 @@
 {
-  "name": "tailwind_starterkit",
+  "name": "tadstack",
   "version": "1.0.0",
-  "description": "tailwind_starterkit dependencies",
+  "description": "tadstack dependencies",
   "author": "Liip",
   "license": "GPL-3.0",
   "scripts": {

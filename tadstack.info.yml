@@ -1,22 +1,22 @@
-name: tailwind_starterkit
+name: tadstack
 type: theme
 'base theme': stable9
 version: 1.0.0
 libraries:
-  - tailwind_starterkit/base
-  - tailwind_starterkit/messages
+  - tadstack/base
+  - tadstack/messages
   - core/normalize
 libraries-extend:
   user/drupal.user:
-    - tailwind_starterkit/user
+    - tadstack/user
   core/drupal.dropbutton:
-    - tailwind_starterkit/dropbutton
+    - tadstack/dropbutton
   core/drupal.dialog:
-    - tailwind_starterkit/dialog
+    - tadstack/dialog
   file/drupal.file:
-    - tailwind_starterkit/file
+    - tadstack/file
   core/drupal.progress:
-    - tailwind_starterkit/progress
+    - tadstack/progress
 description: ''
 core_version_requirement: ^10
 generator: 'starterkit_theme:10.3.5'

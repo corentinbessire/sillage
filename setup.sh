@@ -26,10 +26,16 @@ rm -rf $theme_directory/.git # > /dev/null 2>&1
 # ------------------------------------------------------------------------------------------------------
 echo "🛠️ Renaming Theme..."
 
-find . -type f -name '*.yml' -exec sed -i '' s/tadstack/$theme_name/g {} +  ";" # > /dev/null 2>&1
-find . -type f -name '*.theme' -exec sed -i '' s/tadstack/$theme_name/g {} ";" + # > /dev/null 2>&1
-find . -type f -name '*.json' -exec sed -i '' s/tadstack/$theme_name/g {} ";" + # > /dev/null 2>&1
+
+#Search and Replace in Files
+find . -type f -name '*.yml' -exec sed -i '' 's/tadstack/'$theme_name'/g' {} \;
+find . -type f -name '*.theme' -exec sed -i '' 's/tadstack/'$theme_name'/g' {} \;
+find . -type f -name '*.yml' -exec sed -i '' 's/tadstack/'$theme_name'/g' {} \;
+
+#Renam,ing Files
 find . -name "*tadstack.*" -exec rename -s 'tadstack' $theme_name {} ";" # > /dev/null 2>&1
+
+#renaming Directory
 cd $theme_location
 mv $theme_directory $theme_location/$theme_name # > /dev/null 2>&1
 cd $theme_location/$theme_name

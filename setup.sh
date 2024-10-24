@@ -14,14 +14,10 @@ if [[ "$1" == "--help" ]]; then
     exit 0
 fi
 
-themeName=$1
+theme_name=$1
 theme_directory=$(pwd)
 theme_location="$(dirname "$theme_directory")"
 
-echo $themeName
-echo $theme_directory
-echo $theme_location
-exit
 
 # ------------------------------------------------------------------------------------------------------
 echo "🔗 Removing Git references..."
@@ -30,10 +26,12 @@ rm -rf $theme_directory/.git # > /dev/null 2>&1
 # ------------------------------------------------------------------------------------------------------
 echo "🛠️ Renaming Theme..."
 
-find . -type f -name '*.yml' -exec sed -i '' s/tadstack/$theme_name/g {} + # > /dev/null 2>&1
-find . -type f -name '*.theme' -exec sed -i '' s/tadstack/$theme_name/g {} + # > /dev/null 2>&1
-find . -type f -name '*.json' -exec sed -i '' s/tadstack/$theme_name/g {} + # > /dev/null 2>&1
+find . -type f -name '*.yml' -exec sed -i '' s/tadstack/$theme_name/g {} +  ";" # > /dev/null 2>&1
+find . -type f -name '*.theme' -exec sed -i '' s/tadstack/$theme_name/g {} ";" + # > /dev/null 2>&1
+find . -type f -name '*.json' -exec sed -i '' s/tadstack/$theme_name/g {} ";" + # > /dev/null 2>&1
 find . -name "*tadstack.*" -exec rename -s 'tadstack' $theme_name {} ";" # > /dev/null 2>&1
 cd $theme_location
 mv $theme_directory $theme_location/$theme_name # > /dev/null 2>&1
 cd $theme_location/$theme_name
+
+

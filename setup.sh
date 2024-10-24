@@ -30,7 +30,7 @@ echo "🛠️ Renaming Theme..."
 #Search and Replace in Files
 find . -type f -name '*.yml' -exec sed -i '' 's/tadstack/'$theme_name'/g' {} \;
 find . -type f -name '*.theme' -exec sed -i '' 's/tadstack/'$theme_name'/g' {} \;
-find . -type f -name '*.yml' -exec sed -i '' 's/tadstack/'$theme_name'/g' {} \;
+find . -type f -name '*.json' -exec sed -i '' 's/tadstack/'$theme_name'/g' {} \;
 
 #Renam,ing Files
 find . -name "*tadstack.*" -exec rename -s 'tadstack' $theme_name {} ";" # > /dev/null 2>&1

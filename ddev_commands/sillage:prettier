@@ -1,0 +1,12 @@
+#!/bin/bash
+
+## Description: Apply prettier to the Sillage theme.
+## Usage: sillage:prettier
+## Example: "ddev sillage:prettier"
+
+if [ ! -d "/var/www/html/web/themes/custom/sillage" ]; then
+    echo "Error: Theme 'sillage' not found in web/themes/custom/"
+    exit 1
+fi
+cd /var/www/html/web/themes/custom/sillage || exit
+ npm rebuild

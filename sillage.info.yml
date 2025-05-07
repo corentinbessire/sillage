@@ -1,22 +1,9 @@
 name: sillage
 type: theme
-'base theme': stable9
+'base theme': false
 version: 1.0.0
 libraries:
   - sillage/base
-  - sillage/messages
   - core/normalize
-libraries-extend:
-  user/drupal.user:
-    - sillage/user
-  core/drupal.dropbutton:
-    - sillage/dropbutton
-  core/drupal.dialog:
-    - sillage/dialog
-  file/drupal.file:
-    - sillage/file
-  core/drupal.progress:
-    - sillage/progress
 description: ''
 core_version_requirement: ^10 || ^11
-generator: 'starterkit_theme:10.3.5'

@@ -2,7 +2,7 @@
 
 ## Description: Apply prettier to the theme.
 ## Usage: theme:prettier <theme-name>
-## Example: "ddev theme:prettier tadstack"
+## Example: "ddev theme:prettier sillage"
 
 if [ -z "$1" ]; then
     echo "Error: Theme name is required"

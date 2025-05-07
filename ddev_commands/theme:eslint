@@ -2,7 +2,7 @@
 
 ## Description: Apply eslint to the Theme.
 ## Usage: theme:eslint <theme-name>
-## Example: "ddev theme:eslint tadstack"
+## Example: "ddev theme:eslint sillage"
 
 
 if [ -z "$1" ]; then

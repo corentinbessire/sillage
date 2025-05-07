@@ -2,7 +2,7 @@
 
 ## Description: Start the Dev Server of the Theme
 ## Usage: theme:watch:dev <theme-name>
-## Example: "ddev theme:watch:dev tailwinded"
+## Example: "ddev theme:watch:dev sillage"
 
 if [ -z "$1" ]; then
     echo "Error: Theme name is required"

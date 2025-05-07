@@ -2,7 +2,7 @@
 
 ## Description: Build the Theme
 ## Usage: theme:build:dev <theme-name>
-## Example: "ddev theme:build:dev tadstack"
+## Example: "ddev theme:build:dev sillage"
 
 if [ -z "$1" ]; then
     echo "Error: Theme name is required"

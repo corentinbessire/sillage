@@ -2,7 +2,7 @@
 
 ## Description: NODE Command in theme folder
 ## Usage:  theme:node <theme-name> <node-command> [args]
-## Example: "ddev theme:node tadstack install
+## Example: "ddev theme:node sillage install
 
 if [ -z "$1" ]; then
     echo "Error: Theme name is required"

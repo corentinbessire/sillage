@@ -2,7 +2,7 @@
 
 ## Description: Apply stylelint to the Theme.
 ## Usage: theme:stylelint <theme-name>
-## Example: "ddev theme:stylelint tadstack"
+## Example: "ddev theme:stylelint sillage"
 
 if [ -z "$1" ]; then
     echo "Error: Theme name is required"

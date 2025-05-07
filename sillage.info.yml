@@ -1,22 +1,22 @@
-name: tadstack
+name: sillage
 type: theme
 'base theme': stable9
 version: 1.0.0
 libraries:
-  - tadstack/base
-  - tadstack/messages
+  - sillage/base
+  - sillage/messages
   - core/normalize
 libraries-extend:
   user/drupal.user:
-    - tadstack/user
+    - sillage/user
   core/drupal.dropbutton:
-    - tadstack/dropbutton
+    - sillage/dropbutton
   core/drupal.dialog:
-    - tadstack/dialog
+    - sillage/dialog
   file/drupal.file:
-    - tadstack/file
+    - sillage/file
   core/drupal.progress:
-    - tadstack/progress
+    - sillage/progress
 description: ''
 core_version_requirement: ^10 || ^11
 generator: 'starterkit_theme:10.3.5'

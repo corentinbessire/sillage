@@ -1,7 +1,7 @@
 #!/bin/bash
 ## Description: Run npm commands in a specific theme directory
 ## Usage: theme:npm <theme-name> <npm-command> [args]
-## Example: "ddev theme:npm tadstack install" or "ddev theme:npm tadstack run build"
+## Example: "ddev theme:npm sillage install" or "ddev theme:npm sillage run build"
 
 if [ -z "$1" ]; then
     echo "Error: Theme name is required"

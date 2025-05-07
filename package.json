@@ -1,7 +1,7 @@
 {
-  "name": "tadstack",
+  "name": "sillage",
   "version": "1.0.0",
-  "description": "tadstack dependencies",
+  "description": "sillage dependencies",
   "author": "Liip",
   "license": "GPL-3.0",
   "scripts": {

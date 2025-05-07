@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link URL, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+{% import _self as menus %}
+
+{#
+We call a macro which calls itself to render the full tree.
+@see https://twig.symfony.com/doc/3.x/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {# Desktop Menu #}
+    {% if menu_level == 0 %}
+      <div class="flex flex-1 items-center justify-end gap-x-6">
+    {% endif %}
+    {% for item in items %}
+      {% if loop.last %}
+        {{ link(item.title, item.url,  {
+          'class':[
+            'rounded-md', ' bg-sky-700', ' px-3', ' py-2', ' text-sm ', 'font-semibold',
+            'text-white', 'shadow-sm', 'hover:bg-sky-500', 'focus-visible:outline',
+            'focus-visible:outline-2', 'focus-visible:outline-offset-2', 'focus-visible:outline-sky-700']}) }}
+      {% else %}
+        {{ link(item.title, item.url,  { 'class':['text-sm/6', 'font-semibold', 'text-gray-900']}) }}
+      {% endif %}
+    {% endfor %}
+    </div>
+
+  {% endif %}
+{% endmacro %}

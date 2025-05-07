@@ -14,19 +14,19 @@
  */
 #}
 {% block content %}
-  <div class="h-56">
-  {% if site_logo %}
-    <a href="{{ path('<front>') }}" rel="home"">
-      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" fetchpriority="high" class="h-36 aspect-square object-cover rounded-2xl shadow-md" />
-    </a>
-  {% endif %}
-  {% if site_name %}
-    <div class="site-name">
-      <a href="{{ path('<front>') }}" rel="home">{{ site_name }}</a>
-    </div>
-  {% endif %}
-  {% if site_slogan %}
-    <div class="site-slogan">{{ site_slogan }}</div>
-  {% endif %}
+  <div class="h-24 flex flex-row justify-center items-center gap-2 text-center">
+    {% if site_logo %}
+      <a href="{{ path('<front>') }}" rel="home">
+        <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" fetchpriority="high" class="h-24 aspect-square object-cover rounded-2xl shadow-md" />
+      </a>
+    {% endif %}
+    {% if site_name %}
+      <div>
+        <a class="text-2xl font-extrabold text-sky-700" href="{{ path('<front>') }}" rel="home">{{ site_name | capitalize }}</a>
+      </div>
+    {% endif %}
+    {% if site_slogan %}
+      <div class="site-slogan">{{ site_slogan }}</div>
+    {% endif %}
   </div>
 {% endblock %}

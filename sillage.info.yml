@@ -7,3 +7,10 @@ libraries:
   - core/normalize
 description: ''
 core_version_requirement: ^10 || ^11
+regions:
+  header: 'Header'
+  primary_menu: 'Primary Menu'
+  breadcrumb: 'Breadcrumb'
+  highlighted: 'Highlighted'
+  content: 'Content'
+  footer: 'Footer'

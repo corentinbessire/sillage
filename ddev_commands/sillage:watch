@@ -10,4 +10,4 @@ if [ ! -d "/var/www/html/web/themes/custom/sillage" ]; then
     exit 1
 fi
 cd /var/www/html/web/themes/custom/sillage || exit
-npm watch
+npm run watch

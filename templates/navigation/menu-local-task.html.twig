@@ -14,4 +14,9 @@
  * @see template_preprocess_menu_local_task()
  */
 #}
-<li{{ attributes.addClass(is_active ? 'is-active') }}>{{ link }}</li>
+{% set classes = [
+  'whitespace-nowrap', 'border-b-4', 'px-1', 'py-2',
+  is_active ? 'border-sky-700 text-sky-700' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+] %}
+
+<li{{ attributes.addClass(classes) }}>{{ link }}</li>

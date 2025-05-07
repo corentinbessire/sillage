@@ -43,21 +43,26 @@
  */
 #}
 
-<header class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 gap-8" role="banner">
-    <div class="flex">{{ page.header }}</div>
-    <div class="flex lg:flex-1">{{ page.primary_menu }}</div>
-    <div class="flex">{{ page.secondary_menu }}</div>
-</header>
-<main class="mx-auto max-w-7xl p-6 lg:px-8 gap-8 bg-green-200" role="main">
-  {{ page.breadcrumb }}
-  {{ page.highlighted }}
-  <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-  {{ page.content }}
-</main>
-
-{% if page.footer %}
-  <footer role="contentinfo">
-    {{ page.footer }}
+<div class="min-h-screen flex flex-col">
+  <header class="border-b border-gray-200 shadow-lg" role="banner">
+    <div class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 gap-8">
+      <div class="flex">{{ page.header }}</div>
+      <div class="flex lg:flex-1">{{ page.primary_menu }}</div>
+      <div class="flex">{{ page.secondary_menu }}</div>
+    </div>
+  </header>
+  <main role="main">
+    <div class="mx-auto max-w-7xl items-center justify-between p-6 lg:px-16 gap-8">
+      {{ page.breadcrumb }}
+      {{ page.highlighted }}
+      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+      {{ page.content }}
+    </div>
+  </main>
+  <footer class="border-t border-gray-200 flex-grow" role="contentinfo">
+    <div class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 gap-8">
+      bla bla bla
+      {{ page.footer }}
+    </div>
   </footer>
-{% endif %}
-
+</div>

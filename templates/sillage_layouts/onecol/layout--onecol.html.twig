@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Template for a one-column layout.
+ *
+ * This template provides a one column display layout, with
+ * additional areas for the top and the bottom.
+ *
+ * Available variables:
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{% set classes = [
+  'layout',
+  'layout--onecol',
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+  {% if content.content %}
+    {% set region_classes = [
+      'layout__region', 'layout__region--content',
+      'flex', 'flex-col', 'gap-4'
+    ] %}
+    <div {{ region_attributes.content.addClass(region_classes) }}>
+      {{ content.content }}
+    </div>
+  {% endif %}
+</div>

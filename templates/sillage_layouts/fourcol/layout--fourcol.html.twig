@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a three column layout.
+ *
+ * This template provides a three column 25%-50%-25% display layout, with
+ * additional areas for the top and the bottom.
+ *
+ * Available variables:
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{% set ratio = settings.column_ratio %}
+{% set classes = [
+  'layout',
+  'layout--twocol',
+  'layout--twocol--' ~ ratio,
+  'grid', 'grid-cols-1','lg:grid-cols-4', 'gap-8'
+] %}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    {% if content.first %}
+      <div {{ region_attributes.first.addClass('flex', 'flex-col', 'gap-4','layout__region', 'layout__region--first') }}>
+        {{ content.first }}
+      </div>
+    {% endif %}
+
+    {% if content.second %}
+      <div {{ region_attributes.second.addClass('flex', 'flex-col', 'gap-4', 'layout__region', 'layout__region--second') }}>
+        {{ content.second }}
+      </div>
+    {% endif %}
+
+    {% if content.third %}
+      <div {{ region_attributes.third.addClass('flex', 'flex-col', 'gap-4', 'layout__region', 'layout__region--third') }}>
+        {{ content.third }}
+      </div>
+    {% endif %}
+
+    {% if content.fourth %}
+      <div {{ region_attributes.fourth.addClass('flex', 'flex-col', 'gap-4', 'layout__region', 'layout__region--fourth') }}>
+        {{ content.fourth }}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

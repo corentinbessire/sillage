@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Template for a three-column layout.
+ *
+ * This template provides a three column 25%-50%-25% display layout, with
+ * additional areas for the top and the bottom.
+ *
+ * Available variables:
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{% set ratio = settings.column_ratio %}
+{% set classes = [
+  'layout',
+  'layout--threecol',
+  'layout--threecol--' ~ ratio,
+  'grid', 'grid-cols-1','lg:grid-cols-12', 'gap-8'
+] %}
+{% set column_ratio = ratio|split('_') %}
+{% set ratio_classes = {
+  25: ['lg:col-span-3'],
+  33: ['lg:col-span-4'],
+  50: ['lg:col-span-6'],
+  66: ['lg:col-span-8'],
+  75: ['lg:col-span-9'],
+} %}
+
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    <div {{ region_attributes.first.addClass(ratio_classes[column_ratio[0]],'flex', 'flex-col', 'gap-4') }}>
+      {{ content.first }}
+    </div>
+    <div {{ region_attributes.second.addClass(ratio_classes[column_ratio[1]], 'flex', 'flex-col', 'gap-4') }}>
+      {{ content.second }}
+    </div>
+    <div {{ region_attributes.third.addClass(ratio_classes[column_ratio[2]], 'flex', 'flex-col', 'gap-4') }}>
+      {{ content.third }}
+    </div>
+  </div>
+{% endif %}

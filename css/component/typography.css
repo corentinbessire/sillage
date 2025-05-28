@@ -1,0 +1,35 @@
+@layer base {
+  .node__content .wysiwyg + .quote,
+  .node__content .wysiwyg + .paragraph--type--media {
+    @apply my-6 md:my-8 lg:my-10;
+  }
+
+  .wysiwyg p:not(:last-child) {
+    @apply mb-[1lh];
+  }
+
+  .wysiwyg ul:not([class]) {
+    @apply list-disc pl-6;
+  }
+
+  .wysiwyg ol:not([class]) {
+    @apply list-decimal pl-6;
+  }
+
+  .wysiwyg li:not([class]) {
+    @apply mb-2;
+  }
+
+  .wysiwyg strong {
+    @apply font-bold;
+  }
+
+  .wysiwyg a {
+    @apply underline text-primary;
+  }
+
+  .alert-box a {
+    @apply underline font-bold;
+  }
+
+}

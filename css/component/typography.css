@@ -1,9 +1,4 @@
 @layer base {
-  .node__content .wysiwyg + .quote,
-  .node__content .wysiwyg + .paragraph--type--media {
-    @apply my-6 md:my-8 lg:my-10;
-  }
-
   .wysiwyg p:not(:last-child) {
     @apply mb-[1lh];
   }
@@ -28,8 +23,36 @@
     @apply underline text-black;
   }
 
-  .alert-box a {
-    @apply underline font-bold;
+  .wysiwyg h2 {
+    @apply text-2xl font-bold;
   }
 
+  .wysiwyg h3 {
+    @apply text-2xl font-bold;
+
+  }
+
+  .wysiwyg h4 {
+    @apply text-xl font-bold;
+  }
+
+  .wysiwyg h5 {
+    @apply text-base font-bold;
+  }
+
+  .wysiwyg h6 {
+    @apply text-base font-bold;
+  }
+
+  .wysiwyg em {
+    @apply italic;
+  }
+
+  .wysiwyg hr {
+    @apply mx-2 my-auto border border-b-gray-500;
+  }
+
+
 }
+
+

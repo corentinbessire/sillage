@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Button component template.
+ *
+ * Available variables:
+ * - text: The text to display in the button.
+ * - url: The URL the button links to.
+ * - style: The visual style of the button (link, primary, secondary, accent).
+ * - size: The size of the button (small, medium, big).
+ */
+#}
+
+{# Process attributes to add component classes #}
+{% set classes = [
+  'button',
+  'button--' ~ style|clean_class,
+  'button--size-' ~ size|clean_class,
+  'rounded-xl', 'px-5', 'py-1',
+  'bg-primary text-white','text-xl font-semibold',
+
+] %}
+{% set attributes = create_attribute() %}
+{% set attributes = attributes.addClass(classes) %}
+
+<a href="{{ url }}" {{ attributes }} target="{{ target }}">{{ text }}</a>

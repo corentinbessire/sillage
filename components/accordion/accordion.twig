@@ -1,0 +1,14 @@
+<details class="accordion border-b border-secondary">
+  <summary class="w-full flex justify-between items-center py-6 md:py-10 cursor-pointer">
+    <div class="w-11/12">
+      {% block summary %}{% endblock %}
+    </div>
+    <svg class="accordion-marker" xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" fill="none" aria-hidden="true">
+      <path d="M15.0795 0C15.7882 0 16.1431 0.856861 15.642 1.358L8.5625 8.4375C8.25184 8.74816 7.74816 8.74816 7.4375 8.4375L0.357994 1.35799C-0.14314 0.85686 0.211785 0 0.920495 0H15.0795Z" fill="#69594E"/>
+    </svg>
+  </summary>
+
+  <div class="mb-8 wysiwyg">
+    {% block content %}{% endblock %}
+  </div>
+</details>

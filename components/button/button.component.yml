@@ -1,0 +1,27 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/11.x/core/lib/Drupal/Core/Component/metadata.schema.json'
+name: button
+status: stable
+description: 'Button component with configurable style and size options'
+props:
+  type: object
+  required:
+    - text
+    - url
+  properties:
+    text:
+      type: string
+      title: Text
+      description: 'The text to display in the button.'
+      examples: ['Read more', 'Submit', 'Learn more']
+    url:
+      type: string
+      title: URL
+      description: 'The URL the button links to.'
+      examples: ['https://example.com', '/node/1', '#section-1']
+    attributes:
+      type: string
+      title: Attributes
+      description: 'The attribute of the buton'
+slots: {}
+libraryOverrides:
+  dependencies: []

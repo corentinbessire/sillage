@@ -1,0 +1,35 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/11.x/core/lib/Drupal/Core/Component/metadata.schema.json'
+name: accordion
+status: stable
+description: 'Accordion component'
+props:
+  type: object
+  required:
+    - title
+  properties:
+    title:
+      type: string
+      title: Title
+      description: 'Title of the Accordion'
+    subtitle:
+      type: string
+      title: Subtitle
+      description: 'Optional subtitle of the Accordion'
+    default_state:
+      type: string
+      title: Default Sate
+      description: 'Should the Accordion be open by default'
+      default: closed
+      enum:
+        - open
+        - closed
+    attributes:
+      type: object
+      title: Attributes
+      description: 'The attribute of the buton link'
+slots:
+  content:
+    title: Content
+    description: 'The content to be shown when the accordion is open'
+libraryOverrides:
+  dependencies: []

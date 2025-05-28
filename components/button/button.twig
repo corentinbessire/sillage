@@ -20,7 +20,6 @@
   'bg-primary text-white','text-xl font-semibold',
 
 ] %}
-{% set attributes = create_attribute() %}
 {% set attributes = attributes.addClass(classes) %}
 
-<a href="{{ url }}" {{ attributes }} target="{{ target }}">{{ text }}</a>
+<a href="{{ url }}" {{ attributes }}>{{ text }}</a>

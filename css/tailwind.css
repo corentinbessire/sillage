@@ -1,12 +1,14 @@
 /*
  * Layout styles
  */
+/*
 @import url('./layout/layout.css');
+*/
 
 /*
  * Components styles
  */
-@import url('./component/block.css');
+/*@import url('./component/block.css');
 @import url('./component/breadcrumb.css');
 @import url('./component/buttons.css');
 @import url('./component/field.css');
@@ -17,13 +19,15 @@
 @import url('./component/node.css');
 @import url('./component/sidebar.css');
 @import url('./component/table.css');
-@import url('./component/tabs.css');
+@import url('./component/tabs.css');*/
 @import url('./component/typography.css');
 
 /*
  * Print styles
  */
+/*
 @import url('./theme/print.css');
+*/
 
 
 @import 'tailwindcss';

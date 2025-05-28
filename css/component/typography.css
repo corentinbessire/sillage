@@ -25,7 +25,7 @@
   }
 
   .wysiwyg a {
-    @apply underline text-primary;
+    @apply underline text-black;
   }
 
   .alert-box a {

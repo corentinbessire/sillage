@@ -23,10 +23,6 @@ props:
       enum:
         - open
         - closed
-    attributes:
-      type: object
-      title: Attributes
-      description: 'The attribute of the buton link'
 slots:
   content:
     title: Content

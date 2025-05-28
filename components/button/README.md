@@ -13,8 +13,6 @@ You can use this component in your Twig templates or PHP render arrays:
 {{ include('sillage:button',{
   text: 'Click me',
   url: 'https://example.com',
-  style: 'primary',
-  size: 'medium',
   attributes: {
     'data-custom': 'value'
   }

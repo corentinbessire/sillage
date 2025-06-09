@@ -8,8 +8,7 @@ description: ''
 core_version_requirement: ^10 || ^11
 regions:
   header: 'Header'
-  primary_menu: 'Primary Menu'
-  secondary_menu: 'secondary Menu'
+  mobile_header: 'Mobile Header'
   breadcrumb: 'Breadcrumb'
   highlighted: 'Highlighted'
   content: 'Content'

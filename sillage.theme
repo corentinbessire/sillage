@@ -119,8 +119,10 @@ function sillage_theme_suggestions_input_alter(array &$suggestions, array $varia
   if (isset($variables['element']['#type'], $variables['element']['#name'])) {
     $suggestions[] = 'input__' . $variables['element']['#type'] . '__' . $variables['element']['#name'];
   }
-  $id = str_replace('-', '_', $variables['element']['#id']);
-  $suggestions[] = 'input__' . $variables['element']['#type'] . '__' . $id;
+  if(isset($variables['element']['#id'])) {
+    $id = str_replace('-', '_', $variables['element']['#id']);
+    $suggestions[] = 'input__' . $variables['element']['#type'] . '__' . $id;
+  }
 }
 
 /**

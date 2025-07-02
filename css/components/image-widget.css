@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Image upload widget using Tailwind CSS.
+ */
+
+.image-preview {
+  @apply float-left pr-2.5 pb-2.5;
+}
+
+.image-widget-data {
+  @apply float-left;
+
+  .text-field {
+    @apply w-auto;
+  }
+}

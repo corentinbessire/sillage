@@ -1,0 +1,24 @@
+/**
+ * @file
+ * Styles for breadcrumbs using Tailwind CSS.
+ */
+
+.breadcrumb {
+  @apply pb-2;
+
+  ol {
+    @apply m-0 p-0;
+  }
+
+  li {
+    @apply inline m-0 p-0 list-none;
+
+    ::before {
+      content: " \BB ";
+    }
+
+    :first-child::before {
+      content: none;
+    }
+  }
+}

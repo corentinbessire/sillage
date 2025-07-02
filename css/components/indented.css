@@ -1,0 +1,8 @@
+/**
+ * @file
+ * Basic styling for comment module using Tailwind CSS.
+ */
+
+.indented {
+  @apply ml-6;
+}

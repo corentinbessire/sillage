@@ -1,0 +1,12 @@
+/ **
+ * @file
+ * Table sort indicator using Tailwind CSS.
+ */
+
+th.is-active img {
+  @apply inline;
+}
+
+td.is-active {
+  @apply bg-[#dddddd];
+}

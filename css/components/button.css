@@ -1,0 +1,14 @@
+/**
+ * @file
+ * Visual styles for buttons using Tailwind CSS.
+ */
+
+.button,
+.image-button {
+  @apply mx-4;
+}
+
+.button:first-child,
+.image-button:first-child {
+  @apply mx-0;
+}

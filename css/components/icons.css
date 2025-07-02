@@ -1,0 +1,15 @@
+/**
+ * @file
+ * Visual styles for icons using Tailwind CSS.
+ */
+
+.icon-help {
+  @apply pl-5 py-px bg-no-repeat bg-left bg-[length:auto];
+  background-image: url(../../images/icons/help.png);
+  background-position-y: 50%;
+}
+
+.feed-icon {
+  @apply block overflow-hidden w-4 h-4 -indent-[9999px] bg-no-repeat;
+  background-image: url(../../images/icons/feed.svg);
+}

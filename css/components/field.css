@@ -1,0 +1,23 @@
+/**
+ * @file
+ * Visual styles for fields using Tailwind CSS.
+ */
+
+.field__label {
+  @apply font-bold;
+}
+
+.field--label-inline {
+  .field__label,
+  .field__items {
+    @apply float-left pr-2;
+  }
+
+  > .field__item {
+    @apply pr-2;
+  }
+
+  .field__label::after {
+    content: ":";
+  }
+}

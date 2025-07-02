@@ -1,0 +1,17 @@
+/**
+ * @file
+ * Visual styles for links using Tailwind CSS.
+ */
+
+ul.inline,
+ul.links.inline {
+  @apply inline pl-0;
+}
+
+ul.inline li {
+  @apply inline px-2 list-none;
+}
+
+ul.links a.is-active {
+  @apply text-black;
+}

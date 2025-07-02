@@ -1,0 +1,14 @@
+/**
+ * @file
+ * Styles for modal windows using Tailwind CSS.
+ */
+
+.ui-dialog--narrow {
+  @apply max-w-[500px];
+}
+
+@media screen and (max-width: 600px) {
+  .ui-dialog--narrow {
+    @apply min-w-[95%] max-w-[95%];
+  }
+}

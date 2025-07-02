@@ -1,0 +1,26 @@
+/**
+ * @file
+ * Styles for link buttons and action links using Tailwind CSS.
+ */
+
+.action-links {
+  @apply my-4 p-0 list-none;
+
+  li {
+    @apply inline-block mx-1;
+  }
+
+  li:first-child {
+    @apply ml-0;
+  }
+}
+
+.button-action {
+  @apply inline-block px-2 py-1 text-[1.6] no-underline leading-[1.6];
+
+  ::before {
+    content: "+";
+
+    @apply -ml-0.5 pr-1 font-black;
+  }
+}

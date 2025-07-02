@@ -1,0 +1,26 @@
+/****
+ * @file
+ * Inline items using Tailwind CSS.
+ */
+
+.container-inline {
+  & label::after,
+  & .label::after {
+    content: ":";
+  }
+
+  .form-actions,
+  &.form-actions {
+    @apply mt-0 mb-0;
+  }
+
+  .form-type-radio,
+  .form-type-checkbox {
+    @apply mx-4;
+  }
+}
+
+.form-type-radios .container-inline label::after,
+.form-type-checkboxes .container-inline label::after {
+  content: "";
+}

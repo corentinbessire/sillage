@@ -1,0 +1,58 @@
+/**
+ * @file
+ * Theme styling for user module using Tailwind CSS.
+ */
+
+/* Visual styling for the Password strength indicator */
+.password-strength__meter {
+  @apply mt-2 bg-[#ebeae4];
+}
+
+.password-strength__indicator {
+  @apply transition-[width] duration-500 ease-out bg-[#77b259];
+}
+
+.password-strength__indicator.is-weak {
+  @apply bg-[#e62600];
+}
+
+.password-strength__indicator.is-fair {
+  @apply bg-[#e09600];
+}
+
+.password-strength__indicator.is-good {
+  @apply bg-[#0074bd];
+}
+
+.password-strength__indicator.is-strong {
+  @apply bg-[#77b259];
+}
+
+.password-confirm,
+.password-field,
+.password-strength,
+.password-confirm-match,
+.password-confirm-message {
+  @apply w-[55%];
+}
+
+.password-suggestions {
+  @apply max-w-[34.7em] my-[0.7em] px-2 py-1 border border-[#b4b4b4];
+}
+
+.password-suggestions ul {
+  @apply mb-0;
+}
+
+.confirm-parent,
+.password-parent {
+  @apply clear-left overflow-hidden max-w-[33em] m-0;
+}
+
+.password-confirm .ok {
+  @apply text-[#325e1c] font-bold;
+}
+
+.password-confirm .error {
+  @apply text-[#a51b00] font-bold;
+}

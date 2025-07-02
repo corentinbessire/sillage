@@ -1,0 +1,34 @@
+/**
+ * @file
+ * Visual styles for exposed filters using Tailwind CSS.
+ */
+
+.exposed-filters {
+  .filters {
+    @apply float-left mr-4;
+  }
+
+  .form-item {
+    @apply m-0 mb-0.5 p-0;
+
+    label {
+      @apply float-left w-40 font-normal;
+    }
+  }
+
+  .form-select {
+    @apply w-56;
+  }
+
+  .current-filters {
+    @apply mb-4;
+
+    .placeholder {
+      @apply font-bold not-italic;
+    }
+  }
+
+  .additional-filters {
+    @apply float-left mr-4;
+  }
+}

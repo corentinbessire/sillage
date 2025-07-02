@@ -1,0 +1,15 @@
+/**
+ * @file
+ * Table select behavior using Tailwind CSS.
+ *
+ * @see tableselect.js
+ */
+
+tr.selected td {
+  @apply bg-[#ffffcc];
+}
+
+td.checkbox,
+th.checkbox {
+  @apply text-center;
+}

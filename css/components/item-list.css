@@ -1,0 +1,27 @@
+/**
+ * @file
+ * Visual styles for item list using Tailwind CSS.
+ */
+
+.item-list {
+  .title {
+    @apply font-bold;
+  }
+
+  ul {
+    @apply m-0 mb-3 p-0;
+  }
+
+  li {
+    @apply m-0 mb-1 ml-6 p-0;
+  }
+
+  &--comma-list {
+    @apply inline;
+
+    .item-list__comma-list,
+    .item-list__comma-list li {
+      @apply m-0;
+    }
+  }
+}

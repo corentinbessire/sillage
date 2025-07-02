@@ -1,0 +1,32 @@
+/**
+ * @file
+ * General styles for dropbuttons using Tailwind CSS.
+ */
+
+.js .dropbutton-widget {
+  @apply border border-gray-300 bg-white;
+
+  &:hover {
+    @apply border-gray-400;
+  }
+}
+
+.dropbutton {
+  .dropbutton-action > * {
+    @apply px-2 py-0.5 whitespace-nowrap;
+  }
+
+  .secondary-action {
+    @apply border-t border-gray-200;
+  }
+}
+
+.dropbutton-multiple {
+  .dropbutton {
+    @apply border-r border-gray-200;
+
+    .dropbutton-action > * {
+      @apply mr-1;
+    }
+  }
+}

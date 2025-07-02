@@ -4,7 +4,8 @@
  */
 
 .messages {
-  @apply px-[20px] py-[15px] pl-[35px] break-words border border-solid border-l-0 rounded bg-no-repeat bg-[length:auto] bg-[position:10px_17px] overflow-wrap-break;
+  @apply px-[20px] py-[15px] pl-[35px]  border border-solid border-l-0 rounded bg-no-repeat bg-[length:auto] bg-[position:10px_17px] wrap-break-word
+  ;
 }
 
 .messages + .messages {

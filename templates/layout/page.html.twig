@@ -43,13 +43,18 @@
  */
 #}
 
-<div class="min-h-screen flex flex-col">
-  <header class="border-b border-gray-200 shadow-lg" role="banner">
+<div class="min-h-screen flex flex-col" x-data="{ mobileMenuOpen: false }">
+  <!-- Desktop Header -->
+  <header class="hidden md:block border-b border-gray-200 shadow-lg" role="banner">
     {{ page.header }}
+  </header>
+
+  <!-- Mobile Header - Fixed below toolbar when present -->
+  <header class="md:hidden fixed left-0 right-0 z-40 bg-white border-b border-gray-200 shadow-lg toolbar-fixed" role="banner" style="top: var(--drupal-displace-offset-top, 0px);">
     {{ page.mobile_header }}
   </header>
 
-  <main role="main">
+  <main role="main" class="pt-20 lg:pt-0" style="padding-top: calc(5rem + var(--drupal-displace-offset-top, 0px));" data-class="pt-20 lg:pt-0">
     <div class="container mx-auto items-center justify-between p-6 lg:px-16 gap-8">
       {{ page.breadcrumb }}
       {{ page.highlighted }}

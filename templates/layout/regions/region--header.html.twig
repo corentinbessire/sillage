@@ -12,16 +12,20 @@
  * @see template_preprocess_region()
  */
 #}
-{% set classes = [
-  'region',
-  'region-' ~ region|clean_class,
-  'hidden', 'container', 'mx-auto', 'items-center', 'justify-between', 'p-6',  'gap-8',
-  'lg:!flex','lg:px-8'
-] %}
 {% if content %}
-  <div {{ attributes.addClass(classes) }}>
-    <div class="flex">{{ elements.sillage_site_branding }}</div>
-    <div class="flex lg:flex-1"> {{ elements.sillage_main_menu }}</div>
-    <div class="flex"> {{ elements.sillage_account_menu }}</div>
+  <div class="bg-white">
+    <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between py-4 px-4 lg:px-8 h-20">
+      <div class="flex items-center gap-8">
+        {{ elements.sillage_site_branding }}
+        <!-- Desktop menu moved next to branding -->
+        <div class="flex lg:gap-x-8">
+          {{ elements.sillage_main_menu }}
+        </div>
+      </div>
+      
+      <div class="flex items-center">
+        {{ elements.sillage_account_menu }}
+      </div>
+    </nav>
   </div>
 {% endif %}

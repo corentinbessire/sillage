@@ -148,3 +148,13 @@ function sillage_theme_suggestions_views_view_unformatted_alter(array &$suggesti
   $suggestions[] = 'views_view_unformatted__' . $view->id();
   $suggestions[] = 'views_view_unformatted__' . $view->id() . '__' . $view->current_display;
 }
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function sillage_library_info_alter(&$libraries, $extension) {
+  // Remove Drupal's hidden.module.css to prevent conflicts with Tailwind.
+  if ($extension === 'system' && isset($libraries['base']['css']['component']['css/components/hidden.module.css'])) {
+    unset($libraries['base']['css']['component']['css/components/hidden.module.css']);
+  }
+}

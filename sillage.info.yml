@@ -13,3 +13,8 @@ regions:
   highlighted: 'Highlighted'
   content: 'Content'
   footer: 'Footer'
+libraries-override:
+  system/base:
+    css:
+      component:
+        css/components/hidden.module.css: css/components/hidden.css

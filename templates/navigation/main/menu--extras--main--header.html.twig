@@ -1,0 +1,126 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - content.children: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - content: The field item content.
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+
+{% import _self as menus %}
+
+{% if items %}
+  <ul{{ attributes.addClass('menu flex space-x-8') }}>
+    {% for item in items %}
+      <li class="menu-item relative"
+          x-data="{ open: false }"
+          @mouseenter="open = true"
+          @mouseleave="open = false">
+
+        <a href="{{ item.url }}"
+           class="flex items-center space-x-1 text-gray-900 hover:text-blue-600 transition-colors py-2">
+          {{ item.title }}
+          {% if item.below %}
+            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          {% endif %}
+        </a>
+
+        {% if item.below %}
+          <div x-show="open"
+               x-transition
+               class="fixed bg-white shadow-lg border-t border-gray-200 z-50"
+               style="display: none; left: 0; right: 0; top: calc(5rem + var(--drupal-displace-offset-top, 0px)); width: 100vw;">
+            <div class="max-w-7xl mx-auto">
+              {{ menus.render_dropdown(item.below) }}
+            </div>
+          </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+{% macro render_dropdown(items) %}
+  {% set columns_with_submenus = [] %}
+  {% set items_without_submenus = [] %}
+
+  {% for item in items %}
+    {% if item.below %}
+      {% set columns_with_submenus = columns_with_submenus|merge([item]) %}
+    {% else %}
+      {% set items_without_submenus = items_without_submenus|merge([item]) %}
+    {% endif %}
+  {% endfor %}
+
+  {% set total_columns = columns_with_submenus|length %}
+  {% if items_without_submenus|length > 0 %}
+    {% set total_columns = total_columns + 1 %}
+  {% endif %}
+
+  <div class="grid gap-12 p-8" style="grid-template-columns: repeat({{ total_columns }}, 1fr);">
+    {% for column_item in columns_with_submenus %}
+      <div>
+        <div class="mb-4">
+          {% if column_item.url and column_item.url.routeName != '<nolink>' %}
+            <a href="{{ column_item.url }}" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors">
+              {{ column_item.title }}
+            </a>
+          {% else %}
+            <h3 class="text-sm font-medium text-gray-500">{{ column_item.title }}</h3>
+          {% endif %}
+        </div>
+        <ul class="space-y-3">
+          {% for subitem in column_item.below %}
+            <li>
+              <a href="{{ subitem.url }}" class="flex items-center space-x-3 text-gray-900 hover:text-blue-600 transition-colors">
+                {% if subitem.content['#extras']['icon'] %}
+                  <span class="w-5 h-5 text-gray-400">
+                    {{ subitem.content['#extras']['icon'] }}
+                  </span>
+                {% else %}
+                  <span class="w-5 h-5 text-gray-400">
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                      <circle cx="10" cy="10" r="3"/>
+                    </svg>
+                  </span>
+                {% endif %}
+                <span class="text-sm font-medium">{{ subitem.title }}</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+
+    {% if items_without_submenus|length > 0 %}
+      <div>
+        {% for item in items_without_submenus %}
+          <div class="mb-4">
+            {% if item.url and item.url.routeName != '<nolink>' %}
+              <a href="{{ item.url }}" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors">
+                {{ item.title }}
+              </a>
+            {% else %}
+              <h3 class="text-sm font-medium text-gray-500">{{ item.title }}</h3>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+{% endmacro %}

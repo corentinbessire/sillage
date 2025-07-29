@@ -23,7 +23,7 @@
 {% import _self as menus %}
 
 {% if items %}
-  <ul{{ attributes.addClass('menu flex space-x-8') }}>
+  <ul{{ attributes.addClass('menu flex space-x-8 gap-4') }}>
     {% for item in items %}
       <li class="menu-item relative"
           x-data="{ open: false }"
@@ -31,11 +31,18 @@
           @mouseleave="open = false">
 
         <a href="{{ item.url }}"
-           class="flex items-center space-x-1 text-gray-900 hover:text-blue-600 transition-colors py-2">
+           class="flex items-center space-x-2 font-bold text-gray-900 hover:text-blue-600 transition-colors py-2">
+          {% if item.content.field_icon | render %}
+            <span class="text-current h-6 w-6">
+              {{ item.content.field_icon }}
+            </span>
+          {% endif %}
           {{ item.title }}
           {% if item.below %}
             <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"/>
             </svg>
           {% endif %}
         </a>
@@ -77,20 +84,34 @@
       <div>
         <div class="mb-4">
           {% if column_item.url and column_item.url.routeName != '<nolink>' %}
-            <a href="{{ column_item.url }}" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors">
-              {{ column_item.title }}
+            <a href="{{ column_item.url }}"
+               class="flex items-center space-x-3 font-medium text-gray-500 hover:text-blue-600 transition-colors">
+              {% if column_item.content.field_icon | render %}
+                <span class="text-current h-6 w-6">
+                  {{ column_item.content.field_icon }}
+                </span>
+              {% endif %}
+              <span>{{ column_item.title }}</span>
             </a>
           {% else %}
-            <h3 class="text-sm font-medium text-gray-500">{{ column_item.title }}</h3>
+            <h3 class="flex items-center space-x-3 font-medium text-gray-500">
+              {% if column_item.content.field_icon | render %}
+                <span class="text-current h-6 w-6">
+                  {{ column_item.content.field_icon }}
+                </span>
+              {% endif %}
+              <span>{{ column_item.title }}</span>
+            </h3>
           {% endif %}
         </div>
         <ul class="space-y-3">
           {% for subitem in column_item.below %}
             <li>
-              <a href="{{ subitem.url }}" class="flex items-center space-x-3 text-gray-900 hover:text-blue-600 transition-colors">
-                {% if subitem.content['#extras']['icon'] %}
+              <a href="{{ subitem.url }}"
+                 class="flex items-center space-x-3 text-gray-900 hover:text-blue-600 transition-colors">
+                {% if subitem.content.field_icon | render %}
                   <span class="w-5 h-5 text-gray-400">
-                    {{ subitem.content['#extras']['icon'] }}
+                    {{ subitem.content.field_icon }}
                   </span>
                 {% else %}
                   <span class="w-5 h-5 text-gray-400">
@@ -106,17 +127,30 @@
         </ul>
       </div>
     {% endfor %}
-
     {% if items_without_submenus|length > 0 %}
       <div>
         {% for item in items_without_submenus %}
+
           <div class="mb-4">
             {% if item.url and item.url.routeName != '<nolink>' %}
-              <a href="{{ item.url }}" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors">
-                {{ item.title }}
+              <a href="{{ item.url }}" class="flex items-center space-x-3 font-medium text-gray-500 hover:text-blue-600 transition-colors">
+                {% if item.content.field_icon | render %}
+                  <span class="text-current h-6 w-6">
+                    {{ item.content.field_icon }}
+                  </span>
+                {% endif %}
+                <span>{{ item.title }}</span>
               </a>
             {% else %}
-              <h3 class="text-sm font-medium text-gray-500">{{ item.title }}</h3>
+
+              <h3 class="flex items-center space-x-3 font-medium text-gray-500">
+                {% if item.content.field_icon | render %}
+                  <span class="text-current h-6 w-6">
+                    {{ item.content.field_icon }}
+                  </span>
+                {% endif %}
+                <span>{{ item.title }}</span>
+              </h3>
             {% endif %}
           </div>
         {% endfor %}

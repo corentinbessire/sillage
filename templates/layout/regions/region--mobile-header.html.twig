@@ -13,7 +13,9 @@
  */
 #}
 {% if content %}
-  <div class="flex items-center justify-between px-4 py-6 h-20" x-data="{ mobileMenuOpen: false }">
+  <div class="flex items-center justify-between px-4 py-6 h-20" 
+       x-data="{ mobileMenuOpen: false }"
+       x-effect="document.body.style.overflow = mobileMenuOpen ? 'hidden' : 'auto'">
     <!-- Site Branding - Always visible on left -->
     <div class="flex-shrink-0">
       {{ elements.sillage_mobile_site_branding }}

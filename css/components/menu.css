@@ -9,12 +9,12 @@ ul.menu {
 
 .menu-item--expanded {
   list-style-type: circle;
-  list-style-image: url(../../images/icons/menu-expanded.png);
+  list-style-image: url(../images/icons/menu-expanded.png);
 }
 
 .menu-item--collapsed {
   list-style-type: disc;
-  list-style-image: url(../../images/icons/menu-collapsed.png);
+  list-style-image: url(../images/icons/menu-collapsed.png);
 }
 
 .menu-item {

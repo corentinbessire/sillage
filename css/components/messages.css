@@ -22,17 +22,17 @@
 
 .messages--status {
   @apply text-[#325e1c] border-[#c9e1bd] border-r-[#c9e1bd] border-b-[#c9e1bd] border-l-transparent bg-[#f3faef] shadow-[-8px_0_0_#77b259];
-  background-image: url(../../images/icons/check.svg);
+  background-image: url(../images/icons/check.svg);
 }
 
 .messages--warning {
   @apply text-[#734c00] border-[#f4daa6] border-r-[#f4daa6] border-b-[#f4daa6] border-l-transparent bg-[#fdf8ed] shadow-[-8px_0_0_#e09600];
-  background-image: url(../../images/icons/warning.svg);
+  background-image: url(../images/icons/warning.svg);
 }
 
 .messages--error {
   @apply text-[#a51b00] border-[#f9c9bf] border-r-[#f9c9bf] border-b-[#f9c9bf] border-l-transparent bg-[#fcf4f2] shadow-[-8px_0_0_#e62600];
-  background-image: url(../../images/icons/error.svg);
+  background-image: url(../images/icons/error.svg);
 }
 
 .messages--error p.error {

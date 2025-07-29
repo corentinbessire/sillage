@@ -36,7 +36,7 @@
 
   .ajax-progress-throbber {
     @apply fixed z-[1000] top-[48.5%] left-[49%] w-6 h-6 p-1 opacity-90 rounded bg-[#232323] bg-no-repeat bg-center;
-    background-image: url(../../images/icons/loading-small.svg);
+    background-image: url(../images/icons/loading-small.gif);
 
     .throbber,
     .message {

@@ -26,6 +26,9 @@ form {
   @apply my-4;
 }
 
+.form-item .form-text {
+  @apply border border-gray-300 focus:border-gray-400 focus:right-0.5 focus:outline-none;
+}
 tr.odd .form-item,
 tr.even .form-item {
   @apply my-0;

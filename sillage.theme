@@ -34,7 +34,7 @@ function sillage_preprocess_image_widget(array &$variables) {
  * Adds custom theme suggestions for taxonomy terms based on view mode
  * and term properties.
  */
-function sillage_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+function sillage_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
   /** @var \Drupal\taxonomy\TermInterface $term */
   $term = $variables['elements']['#taxonomy_term'];
   $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
@@ -49,7 +49,7 @@ function sillage_theme_suggestions_taxonomy_term_alter(array &$suggestions, arra
  *
  * Adds theme suggestions for custom block bundles.
  */
-function sillage_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+function sillage_suggestions_block_alter(array &$suggestions, array $variables) {
   // Block suggestions for custom block bundles.
   if (isset($variables['elements']['content']['#block_content'])) {
     array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
@@ -61,7 +61,7 @@ function sillage_theme_suggestions_block_alter(array &$suggestions, array $varia
  *
  * Adds a theme suggestion for forms based on the form ID.
  */
-function sillage_theme_suggestions_form_alter(array &$suggestions, array $variables): void {
+function sillage_suggestions_form_alter(array &$suggestions, array $variables): void {
   if (isset($variables['element']['#form_id'])) {
     $form_id = str_replace('-', '_', $variables['element']['#form_id']);
     $suggestions[] = 'form__' . $form_id;
@@ -73,7 +73,7 @@ function sillage_theme_suggestions_form_alter(array &$suggestions, array $variab
  *
  * Adds theme suggestions for form elements based on type and name.
  */
-function sillage_theme_suggestions_form_element_alter(array &$suggestions, array $variables): void {
+function sillage_suggestions_form_element_alter(array &$suggestions, array $variables): void {
   if (isset($variables['element']['#type'])) {
     $suggestions[] = 'form_element__' . $variables['element']['#type'];
   }
@@ -90,7 +90,7 @@ function sillage_theme_suggestions_form_element_alter(array &$suggestions, array
  *
  * Adds theme suggestions for form element labels based on their HTML ID.
  */
-function sillage_theme_suggestions_form_element_label_alter(array &$suggestions, array $variables): void {
+function sillage_suggestions_form_element_label_alter(array &$suggestions, array $variables): void {
   $id = str_replace('-', '_', $variables['element']['#id']);
   $suggestions[] = 'form_element_label__' . $id;
 }
@@ -100,7 +100,7 @@ function sillage_theme_suggestions_form_element_label_alter(array &$suggestions,
  *
  * Adds theme suggestions for fields displayed in specific view modes on nodes.
  */
-function sillage_theme_suggestions_field_alter(&$suggestions, $variables) {
+function sillage_suggestions_field_alter(&$suggestions, $variables) {
   $suggestions[] = 'field__node__' . $variables['element']['#field_name'] . '__' . $variables['element']['#bundle'] . '__' . $variables['element']['#view_mode'];
 }
 
@@ -109,7 +109,7 @@ function sillage_theme_suggestions_field_alter(&$suggestions, $variables) {
  *
  * Adds theme suggestions for input elements based on type, name, and ID.
  */
-function sillage_theme_suggestions_input_alter(array &$suggestions, array $variables): void {
+function sillage_suggestions_input_alter(array &$suggestions, array $variables): void {
   if (isset($variables['element']['#type'])) {
     $suggestions[] = 'input__' . $variables['element']['#type'];
   }
@@ -130,7 +130,7 @@ function sillage_theme_suggestions_input_alter(array &$suggestions, array $varia
  *
  * Adds theme suggestions for the view and its current display.
  */
-function sillage_theme_suggestions_views_view_alter(array &$suggestions, array &$variables) {
+function sillage_suggestions_views_view_alter(array &$suggestions, array &$variables) {
   /** @var Drupal\views\ViewExecutable $view */
   $view = $variables['view'];
   $suggestions[] = 'views_view__' . $view->id();
@@ -142,7 +142,7 @@ function sillage_theme_suggestions_views_view_alter(array &$suggestions, array &
  *
  * Adds theme suggestions for unformatted views and their displays.
  */
-function sillage_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array &$variables) {
+function sillage_suggestions_views_view_unformatted_alter(array &$suggestions, array &$variables) {
   /** @var Drupal\views\ViewExecutable $view */
   $view = $variables['view'];
   $suggestions[] = 'views_view_unformatted__' . $view->id();

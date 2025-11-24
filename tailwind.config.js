@@ -9,31 +9,31 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: 'rgb(var(--primary))',
-          'light': 'rgb(var(--primary-light))',
-          'dark': 'rgb(var(--primary-dark))',
+          DEFAULT: 'var(--primary)',
+          'light': 'var(--primary-light)',
+          'dark' : 'var(--primary-dark)',
         },
         secondary: {
-          DEFAULT: 'rgb(var(--secondary))',
-          'light': 'rgb(var(--secondary-light))',
-          'dark': 'rgb(var(--secondary-dark))',
+          DEFAULT: 'var(--secondary)',
+          'light': 'var(--secondary-light)',
+          'dark': 'var(--secondary-dark)',
         },
         accent: {
-          DEFAULT: 'rgb(var(--accent))',
-          'light': 'rgb(var(--accent-light))',
-          'dark': 'rgb(var(--accent-dark))',
+          DEFAULT: 'var(--accent)',
+          'light': 'var(--accent-light)',
+          'dark': 'var(--accent-dark)',
         },
         info: {
-          DEFAULT: 'rgb(var(--info))',
+          DEFAULT: 'var(--info)',
         },
         warning: {
-          DEFAULT: 'rgb(var(--warning))',
+          DEFAULT: 'var(--warning)',
         },
         error: {
-          DEFAULT: 'rgb(var(--error))',
+          DEFAULT: 'var(--error)',
         },
         success: {
-          DEFAULT: 'rgb(var(--success))',
+          DEFAULT: 'var(--success)',
         },
       },
     }

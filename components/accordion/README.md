@@ -10,7 +10,7 @@ You can use this component in your Twig templates or PHP render arrays:
 ### In Twig:
 
 ```twig
-  {% embed 'sillage:accordion' with {
+  {% embed 'lug:accordion' with {
     title: 'Section Title',
     subtitle: 'Optional subtitle',
     default_state: open
@@ -26,7 +26,7 @@ You can use this component in your Twig templates or PHP render arrays:
 ```php
 $build['accordion'] = [
   '#type' => 'component',
-  '#component' => 'sillage:accordion',
+  '#component' => 'lug:accordion',
   '#props' => [
     'title' => 'Section Title',
     'subtitle' => 'Optional subtitle',
@@ -59,7 +59,7 @@ $build['accordion'] = [
 ### Open by Default
 
 ```twig
-  {% embed 'sillage:accordion' with {
+  {% embed 'lug:accordion' with {
     title: 'Accordion Title',
     default_state: open
     } only %}
@@ -74,7 +74,7 @@ $build['accordion'] = [
 ### With Subtitle
 
 ```twig
-{{ include('sillage:accordion', {
+{{ include('lug:accordion', {
   title: 'Accordion Title',
   subtitle: 'Optional subtitle',
   default_state: closed,

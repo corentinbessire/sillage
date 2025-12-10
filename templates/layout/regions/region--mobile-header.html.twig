@@ -18,10 +18,10 @@
        x-effect="document.body.style.overflow = mobileMenuOpen ? 'hidden' : 'auto'">
     <!-- Site Branding - Always visible on left -->
     <div class="flex-shrink-0">
-      {{ elements.sillage_mobile_site_branding }}
+      {{ elements.lug_mobile_site_branding }}
 
     </div>
-    {{ elements.sillage_mobile_user_account_menu }}
+    {{ elements.lug_mobile_user_account_menu }}
 
     <!-- Burger Menu Button -->
     <button type="button" @click="$dispatch('toggle-mobile-menu')"
@@ -52,9 +52,9 @@
         <!-- Header with branding and close button -->
         <div class="flex items-center justify-between px-4 py-6 h-20 border-b border-gray-200">
           <div class="flex-shrink-0">
-            {{ elements.sillage_mobile_site_branding }}
+            {{ elements.lug_mobile_site_branding }}
           </div>
-          {{ elements.sillage_mobile_user_account_menu }}
+          {{ elements.lug_mobile_user_account_menu }}
 
           <button type="button" @click="mobileMenuOpen = false"
                   class="flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100">
@@ -69,7 +69,7 @@
         <!-- Menu Content -->
         <div class="flex-1 overflow-y-auto p-4">
           <div class="space-y-4">
-            {{ elements.sillage_mobile_main_menu }}
+            {{ elements.lug_mobile_main_menu }}
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ You can use this component in your Twig templates or PHP render arrays:
 ### In Twig:
 
 ```twig
-{{ include('sillage:button',{
+{{ include('lug:button',{
   text: 'Click me',
   url: 'https://example.com',
   attributes: {
@@ -24,7 +24,7 @@ You can use this component in your Twig templates or PHP render arrays:
 ```php
 $build['button'] = [
   '#type' => 'component',
-  '#component' => 'sillage:button',
+  '#component' => 'lug:button',
   '#props' => [
     'text' => 'Click me',
     'url' => 'https://example.com',

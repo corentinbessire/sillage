@@ -1,9 +1,9 @@
-name: sillage
+name: lug
 type: theme
 'base theme': false
 version: 1.0.0
 libraries:
-  - sillage/base
+  - lug/base
 description: ''
 core_version_requirement: ^10 || ^11
 regions:

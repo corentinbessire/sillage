@@ -1,40 +1,40 @@
-import { defineConfig } from "vite";
-import { resolve } from "path";
+import { defineConfig } from 'vite';
+import { resolve } from 'path';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   build: {
-    outDir: "build",
+    outDir: 'build',
     sourcemap: true,
     manifest: true,
     lib: {
-      entry: resolve(__dirname, "./js/main.js"),
-      name: "drupalTheme",
-      formats: ["es"],
-      fileName: () => "main.js",
+      entry: resolve(__dirname, './js/main.js'),
+      name: 'drupalTheme',
+      formats: ['es'],
+      fileName: () => 'main.js',
     },
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          if (assetInfo.names?.some((name) => name.endsWith(".css"))) {
-            return "styles.css";
+          if (assetInfo.names?.some((name) => name.endsWith('.css'))) {
+            return 'styles.css';
           }
-          return "[name].[ext]";
+          return '[name].[ext]';
         },
       },
     },
   },
   define: {
-    Alpine: "Alpine",
+    Alpine: 'Alpine',
   },
-  plugins: [],
+  plugins: [tailwindcss()],
   css: {
     devSourcemap: true,
-    extract: "styles.css",
-    postcss: true,
+    extract: 'styles.css',
   },
   resolve: {
     alias: {
-      alpinejs: "alpinejs",
+      alpinejs: 'alpinejs',
     },
   },
 });

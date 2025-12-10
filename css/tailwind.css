@@ -1,59 +1,54 @@
-/*
- * Layout styles
- */
-@import url('./layout/layout.css');
+@import 'tailwindcss' source('../');
+
 
 /*
  * Components styles
  */
-@import url('./components/action-links.css');
-@import url('./components/breadcrumb.css');
-@import url('./components/button.css');
-@import url('./components/container-inline.css');
-@import url('./components/details.css');
-@import url('./components/dialog.css');
-@import url('./components/dropbutton.css');
-@import url('./components/exposed-filters.css');
-@import url('./components/field.css');
-@import url('./components/file.css');
-@import url('./components/form.css');
-@import url('./components/hidden.css');
-@import url('./components/icons.css');
-@import url('./components/image-widget.css');
-@import url('./components/indented.css');
-@import url('./components/inline-form.css');
-@import url('./components/item-list.css');
-@import url('./components/link.css');
-@import url('./components/links.css');
-@import url('./components/menu.css');
-@import url('./components/messages.css');
-@import url('./components/more-link.css');
-@import url('./components/node.css');
-@import url('./components/pager.css');
-@import url('./components/progress.css');
-@import url('./components/search-results.css');
-@import url('./components/tabledrag.css');
-@import url('./components/tableselect.css');
-@import url('./components/tablesort.css');
-@import url('./components/tabs.css');
-@import url('./components/textarea.css');
-@import url('./components/typography.css');
-@import url('./components/ui-dialog.css');
-@import url('./components/user.css');
+@import './components/action-links.css';
+@import './components/breadcrumb.css';
+@import './components/button.css';
+@import './components/container-inline.css';
+@import './components/details.css';
+@import './components/dialog.css';
+@import './components/dropbutton.css';
+@import './components/exposed-filters.css';
+@import './components/field.css';
+@import './components/file.css';
+@import './components/form.css';
+@import './components/hidden.css';
+@import './components/icons.css';
+@import './components/image-widget.css';
+@import './components/indented.css';
+@import './components/inline-form.css';
+@import './components/item-list.css';
+@import './components/link.css';
+@import './components/links.css';
+@import './components/menu.css';
+@import './components/messages.css';
+@import './components/more-link.css';
+@import './components/node.css';
+@import './components/pager.css';
+@import './components/progress.css';
+@import './components/search-results.css';
+@import './components/tabledrag.css';
+@import './components/tableselect.css';
+@import './components/tablesort.css';
+@import './components/tabs.css';
+@import './components/textarea.css';
+@import './components/typography.css';
+@import './components/ui-dialog.css';
+@import './components/user.css';
 
 
 
 /*
  * Print styles
  */
- @import url('./theme/print.css');
+ @import './theme/print.css';
 
 
 
 @import 'tailwindcss';
-
-@config '../tailwind.config.js';
-
 
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
